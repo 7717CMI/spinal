@@ -106,11 +106,10 @@ const sampleDistributorData: DistributorData[] = [
 ]
 
 interface CustomerIntelligenceDatabaseProps {
-  title?: string
   height?: number
 }
 
-export default function CustomerIntelligenceDatabaseWithTabs({ title = "Intelligence Database", height }: CustomerIntelligenceDatabaseProps) {
+export default function CustomerIntelligenceDatabaseWithTabs({ height }: CustomerIntelligenceDatabaseProps) {
   // Distributor Intelligence Table
   const renderDistributorTable = () => (
     <div className="overflow-x-auto">
@@ -163,12 +162,8 @@ export default function CustomerIntelligenceDatabaseWithTabs({ title = "Intellig
 
   return (
     <div className="w-full" style={height ? { height: `${height}px` } : undefined}>
-      <h2 className="text-xl font-bold text-black mb-6">{title}</h2>
-
-      <div>
-        <h3 className="text-lg font-bold text-black mb-4">Distributor Intelligence</h3>
-        {renderDistributorTable()}
-      </div>
+      <h2 className="text-xl font-bold text-black mb-6">Distributor Intelligence</h2>
+      {renderDistributorTable()}
     </div>
   )
 }
